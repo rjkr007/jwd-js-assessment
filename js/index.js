@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let calculateScore = () => {
     let score = 0;
     quizArray.map((quizItem, index) => {
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 4; i++) {
         //highlight the li if it is the correct answer
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
@@ -89,10 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
           liElement.style.backgroundColor = "#79ff4d";
         }
 
-        if (radioElement.checked) {
+        if (radioElement.checked ) {
           if (quizItem.a == i) {
             score += 1;
-            console.log(score);
+           
           }
           // for (i = 0; i < 6; i++) score += 1; // increment only
           // return score;
@@ -110,6 +110,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const btnSubmit = document.querySelector("#btnSubmit");
   btnSubmit.addEventListener("click", () => {
     calculateScore();
+    clearInterval(interval);
+    btnSubmit.style.display = "none";
   });
   //  submit() {
   //   calculateScore();
