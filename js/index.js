@@ -89,14 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
           liElement.style.backgroundColor = "#79ff4d";
         }
 
-        if (radioElement.checked ) {
+        if (radioElement.checked) {
           if (quizItem.a == i) {
             score += 1;
-           
           }
-          // for (i = 0; i < 6; i++) score += 1; // increment only
-          // return score;
-
           // code for task 1 goes here
         }
       }
@@ -113,11 +109,17 @@ window.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
     btnSubmit.style.display = "none";
   });
-  //  submit() {
-  //   calculateScore();
-  // document.getElementById("score").innerHTML =
-  //   "Your score is" + calculateScore() + "/" + quizArray.length;
-  // $("#btnSubmit").hide();
+  let count = 20;
+  const interval = setInterval(function () {
+    time = document.getElementById("time");
+    time.innerHTML = count;
+    count--;
+    if (count === 0) {
+      clearInterval(interval);
+      time.innerHTML = `${count}: Time is up!!!`;
+      calculateScore();
+    }
+  }, 1000);
 
   // call the displayQuiz function
   displayQuiz();
@@ -127,8 +129,6 @@ window.addEventListener("DOMContentLoaded", () => {
 btnReset.addEventListener("click", () => {
   location.reload();
 });
-// function reset() {
-//   document.querySelector("#start").style.display = "block";
-//   quizBlock.style.display = "none";
-//   resetPage();
-// }
+
+// // call the displayQuiz function
+//   displayQuiz();
