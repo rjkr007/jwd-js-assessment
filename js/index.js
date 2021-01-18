@@ -113,10 +113,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const interval = setInterval(function () {
     time = document.getElementById("time");
     time.innerHTML = count;
+    document.querySelector("#time").style.color = "#ff0000";
     count--;
     if (count === 0) {
       clearInterval(interval);
       time.innerHTML = `${count}: Time is up!!!`;
+      document.querySelector("#time").style.color = "#ff0000";
+       liElement.style.backgroundColor = "";
       calculateScore();
     }
   }, 1000);
