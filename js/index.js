@@ -99,11 +99,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     //display score
     const scoreDisplay = document.querySelector("#score");
-    scoreDisplay.innerHTML = `TOTAL SCORE: ${score}`;
+    scoreDisplay.innerHTML = `TOTAL SCORE: ${score} 🎆`;
+    scoreDisplay.style.backgroundColor = "#79ff4d";
     // console.log(score);
   };
 
-  const btnSubmit = document.querySelector("#btnSubmit");
+  // const btnSubmit = document.querySelector("#btnSubmit");
   btnSubmit.addEventListener("click", () => {
     calculateScore();
     clearInterval(interval);
@@ -117,7 +118,7 @@ window.addEventListener("DOMContentLoaded", () => {
     count--;
     if (count === 0) {
       clearInterval(interval);
-      time.innerHTML = `${count}: Time is up!!!`;
+      time.innerHTML = `${count}: Time is up!!! 🧧`;
       document.querySelector("#time").style.color = "#ff0000";
        liElement.style.backgroundColor = "";
       calculateScore();
@@ -128,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
   displayQuiz();
 });
 
-// const btnReset = documnet.querySelector("#btnReset");
+// const btnReset = document.querySelector("#btnReset");
 btnReset.addEventListener("click", () => {
   location.reload();
 });
